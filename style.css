@@ -92,11 +92,41 @@ h3 { font-size: 1.25rem; }
   align-items: start;
 }
 
+.apps-stack {
+  display: grid;
+  gap: 1.25rem;
+}
+
 .app-icon {
   width: 96px;
   height: 96px;
   border-radius: 22px;
   box-shadow: 0 14px 28px rgba(0,0,0,0.28);
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.title-row h2 {
+  margin-bottom: 0;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(141,242,207,0.35);
+  border-radius: 999px;
+  color: var(--accent-2);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.45rem 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .grid-two {
