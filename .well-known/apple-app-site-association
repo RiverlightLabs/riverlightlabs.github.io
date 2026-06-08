@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["TQB59LH2UC.com.riverlightlabs.plottwist"],
+        "components": [
+          {
+            "/": "/plot-twist/join/*",
+            "comment": "Circle invite links"
+          }
+        ]
+      }
+    ]
+  }
+}
