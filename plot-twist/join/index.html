@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join Plot Twist</title>
+  <meta name="description" content="Join a private Plot Twist Circle with an invite code." />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <p class="eyebrow">Plot Twist Invite</p>
+      <h1>Join your Circle</h1>
+      <p class="lead">
+        Open Plot Twist to join this private Circle. If the app is not installed yet, keep the invite code
+        below and enter it after signing in.
+      </p>
+      <nav class="nav-links">
+        <a href="../../index.html">Apps</a>
+        <a href="../../support.html">Support</a>
+        <a href="../../privacy.html">Privacy</a>
+        <a href="../../terms.html">Terms</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <p class="section-label">Invite Code</p>
+          <h2 id="invite-code">------</h2>
+          <p id="invite-copy">
+            Use this code in Plot Twist to join the Circle.
+          </p>
+          <div class="button-row">
+            <a class="button" id="open-app-link" href="plottwist://join/">Open Plot Twist</a>
+            <a class="button button-secondary" href="https://apps.apple.com/app/id6777799487">View on the App Store</a>
+            <a class="button button-secondary" href="../../support.html">Get support</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>© 2026 Riverlight Labs</p>
+      <div class="footer-links">
+        <a href="../../support.html">Support</a>
+        <a href="../../privacy.html">Privacy</a>
+        <a href="../../terms.html">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const inviteCode = (params.get('code') || '').replace(/[^a-z0-9]/gi, '').toUpperCase().slice(0, 6);
+    const openAppLink = document.getElementById('open-app-link');
+    const inviteCodeNode = document.getElementById('invite-code');
+    const inviteCopyNode = document.getElementById('invite-copy');
+
+    if (inviteCode.length === 6) {
+      const appUrl = `plottwist://join/${inviteCode}`;
+      openAppLink.href = appUrl;
+      inviteCodeNode.textContent = inviteCode;
+      inviteCopyNode.textContent = `Backup code: ${inviteCode}`;
+    } else {
+      openAppLink.href = 'https://apps.apple.com/app/id6777799487';
+      inviteCopyNode.textContent = 'The invite link is missing a valid code. Ask your Circle owner to share a fresh invite.';
+    }
+  </script>
+</body>
+</html>
