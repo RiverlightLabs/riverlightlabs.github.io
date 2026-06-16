@@ -201,6 +201,81 @@ ul {
 .legal .card p:last-child,
 .legal .card ul:last-child { margin-bottom: 0; }
 
+/* Accordion */
+details.card {
+  padding: 0;
+  overflow: hidden;
+}
+
+details.card > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.2rem 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  user-select: none;
+}
+
+details.card > summary::-webkit-details-marker,
+details.card > summary::marker { display: none; }
+
+details.card > summary::after {
+  content: '+';
+  font-size: 1.5rem;
+  color: var(--accent);
+  flex-shrink: 0;
+  line-height: 1;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+details[open].card > summary::after {
+  transform: rotate(45deg);
+}
+
+.summary-content {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.summary-app-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
+  flex-shrink: 0;
+}
+
+.summary-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.summary-sub {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 0.15rem;
+}
+
+.accordion-body {
+  padding: 1.4rem 1.6rem;
+  border-top: 1px solid var(--border);
+}
+
+.accordion-body h3 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  margin-top: 1.4rem;
+  color: var(--text);
+}
+
+.accordion-body h3:first-child { margin-top: 0; }
+
 @media (max-width: 720px) {
   .app-card {
     grid-template-columns: 1fr;
